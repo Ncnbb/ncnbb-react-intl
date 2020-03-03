@@ -186,27 +186,91 @@ var CustomRCIntlProvider = /*#__PURE__*/function (_React$Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _createContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./createContext */ "../es/createContext.js");
+/* harmony import */ var _Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/@babel/runtime-corejs3/helpers/esm/classCallCheck */ "../node_modules/@babel/runtime-corejs3/helpers/esm/classCallCheck.js");
+/* harmony import */ var _Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/@babel/runtime-corejs3/helpers/esm/createClass */ "../node_modules/@babel/runtime-corejs3/helpers/esm/createClass.js");
+/* harmony import */ var _Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/@babel/runtime-corejs3/helpers/esm/possibleConstructorReturn */ "../node_modules/@babel/runtime-corejs3/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../node_modules/@babel/runtime-corejs3/helpers/esm/getPrototypeOf */ "../node_modules/@babel/runtime-corejs3/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../node_modules/@babel/runtime-corejs3/helpers/esm/inherits */ "../node_modules/@babel/runtime-corejs3/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _createContext__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./createContext */ "../es/createContext.js");
+
+
+
+
+
 var _jsxFileName = "/Users/lamho/Desktop/\u524D\u7AEF\u4EE3\u7801/Github/ncnbb-react-intl/es/FormatMessage.jsx";
 
 
 
-function FormatMessage(props) {
-  var langMap = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_createContext__WEBPACK_IMPORTED_MODULE_1__["default"]);
-  if (!langMap) throw new Error('没有任何多语言数据');
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: props.className,
-    style: props.style,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 7
-    },
-    __self: this
-  }, langMap[props.id]);
-}
+var FormatMessage = /*#__PURE__*/function (_React$Component) {
+  Object(_Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(FormatMessage, _React$Component);
 
+  function FormatMessage(props) {
+    Object(_Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, FormatMessage);
+
+    return Object(_Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(FormatMessage).call(this, props));
+  }
+
+  Object(_Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(FormatMessage, [{
+    key: "createRegExp",
+    value: function createRegExp(key) {
+      return new RegExp("{".concat(key, "}"), 'g');
+    }
+  }, {
+    key: "replaceStr",
+    value: function replaceStr(str, renderData) {
+      var newStr = str;
+
+      for (var item in renderData) {
+        newStr = newStr.replace(this.createRegExp(item), renderData[item]);
+      }
+
+      return newStr;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this = this;
+
+      var _this$props = this.props,
+          id = _this$props.id,
+          style = _this$props.style,
+          className = _this$props.className,
+          renderData = _this$props.renderData;
+
+      if (!id) {
+        return null;
+      }
+
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_createContext__WEBPACK_IMPORTED_MODULE_6__["default"].Consumer, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 22
+        },
+        __self: this
+      }, function (state) {
+        return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
+          className: className,
+          style: style,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 24
+          },
+          __self: this
+        }, renderData ? _this.replaceStr(state[id], renderData) : state[id]);
+      });
+    }
+  }]);
+
+  return FormatMessage;
+}(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
+
+FormatMessage.defaultProps = {
+  className: '',
+  style: {},
+  renderData: null
+};
 /* harmony default export */ __webpack_exports__["default"] = (FormatMessage);
 
 /***/ }),
@@ -348,7 +412,7 @@ var RCIntlContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext({
 /*!***********************!*\
   !*** ../es/index.jsx ***!
   \***********************/
-/*! exports provided: CustomRCIntlProvider, I18nRCIntlProvider, SingleRCIntlProvider, FormatMessage */
+/*! exports provided: CustomRCIntlProvider, I18nRCIntlProvider, SingleRCIntlProvider, FormatMessageHookComponent, FormatMessage */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -363,12 +427,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SingleRCIntlProvider", function() { return _SingleRCIntlProvider__WEBPACK_IMPORTED_MODULE_2__["default"]; });
 
 /* harmony import */ var _FormatMessage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./FormatMessage */ "../es/FormatMessage.jsx");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FormatMessageHookComponent", function() { return _FormatMessage__WEBPACK_IMPORTED_MODULE_3__["default"]; });
+
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FormatMessage", function() { return _FormatMessage__WEBPACK_IMPORTED_MODULE_3__["default"]; });
 
 
 
 
 
+
+
+/***/ }),
+
+/***/ "../node_modules/@babel/runtime-corejs3/core-js-stable/set-interval.js":
+/*!*****************************************************************************!*\
+  !*** ../node_modules/@babel/runtime-corejs3/core-js-stable/set-interval.js ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js-pure/stable/set-interval */ "../node_modules/core-js-pure/stable/set-interval.js");
 
 /***/ }),
 
@@ -3873,6 +3951,60 @@ for (var COLLECTION_NAME in DOMIterables) {
 
 /***/ }),
 
+/***/ "../node_modules/core-js-pure/modules/web.timers.js":
+/*!**********************************************************!*\
+  !*** ../node_modules/core-js-pure/modules/web.timers.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var $ = __webpack_require__(/*! ../internals/export */ "../node_modules/core-js-pure/internals/export.js");
+var global = __webpack_require__(/*! ../internals/global */ "../node_modules/core-js-pure/internals/global.js");
+var userAgent = __webpack_require__(/*! ../internals/engine-user-agent */ "../node_modules/core-js-pure/internals/engine-user-agent.js");
+
+var slice = [].slice;
+var MSIE = /MSIE .\./.test(userAgent); // <- dirty ie9- check
+
+var wrap = function (scheduler) {
+  return function (handler, timeout /* , ...arguments */) {
+    var boundArgs = arguments.length > 2;
+    var args = boundArgs ? slice.call(arguments, 2) : undefined;
+    return scheduler(boundArgs ? function () {
+      // eslint-disable-next-line no-new-func
+      (typeof handler == 'function' ? handler : Function(handler)).apply(this, args);
+    } : handler, timeout);
+  };
+};
+
+// ie9- setTimeout & setInterval additional parameters fix
+// https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#timers
+$({ global: true, bind: true, forced: MSIE }, {
+  // `setTimeout` method
+  // https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-settimeout
+  setTimeout: wrap(global.setTimeout),
+  // `setInterval` method
+  // https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-setinterval
+  setInterval: wrap(global.setInterval)
+});
+
+
+/***/ }),
+
+/***/ "../node_modules/core-js-pure/stable/set-interval.js":
+/*!***********************************************************!*\
+  !*** ../node_modules/core-js-pure/stable/set-interval.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ../modules/web.timers */ "../node_modules/core-js-pure/modules/web.timers.js");
+var path = __webpack_require__(/*! ../internals/path */ "../node_modules/core-js-pure/internals/path.js");
+
+module.exports = path.setInterval;
+
+
+/***/ }),
+
 /***/ "../node_modules/object-assign/index.js":
 /*!**********************************************!*\
   !*** ../node_modules/object-assign/index.js ***!
@@ -6053,14 +6185,17 @@ if (false) {} else {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Sub; });
-/* harmony import */ var _Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/@babel/runtime-corejs3/helpers/esm/classCallCheck */ "../node_modules/@babel/runtime-corejs3/helpers/esm/classCallCheck.js");
-/* harmony import */ var _Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/@babel/runtime-corejs3/helpers/esm/createClass */ "../node_modules/@babel/runtime-corejs3/helpers/esm/createClass.js");
-/* harmony import */ var _Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/@babel/runtime-corejs3/helpers/esm/possibleConstructorReturn */ "../node_modules/@babel/runtime-corejs3/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../node_modules/@babel/runtime-corejs3/helpers/esm/getPrototypeOf */ "../node_modules/@babel/runtime-corejs3/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../node_modules/@babel/runtime-corejs3/helpers/esm/inherits */ "../node_modules/@babel/runtime-corejs3/helpers/esm/inherits.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _es_index__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../es/index */ "../es/index.jsx");
+/* harmony import */ var _Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_core_js_stable_set_interval__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/@babel/runtime-corejs3/core-js-stable/set-interval */ "../node_modules/@babel/runtime-corejs3/core-js-stable/set-interval.js");
+/* harmony import */ var _Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_core_js_stable_set_interval__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_core_js_stable_set_interval__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/@babel/runtime-corejs3/helpers/esm/classCallCheck */ "../node_modules/@babel/runtime-corejs3/helpers/esm/classCallCheck.js");
+/* harmony import */ var _Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/@babel/runtime-corejs3/helpers/esm/createClass */ "../node_modules/@babel/runtime-corejs3/helpers/esm/createClass.js");
+/* harmony import */ var _Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../node_modules/@babel/runtime-corejs3/helpers/esm/possibleConstructorReturn */ "../node_modules/@babel/runtime-corejs3/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../node_modules/@babel/runtime-corejs3/helpers/esm/getPrototypeOf */ "../node_modules/@babel/runtime-corejs3/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../node_modules/@babel/runtime-corejs3/helpers/esm/inherits */ "../node_modules/@babel/runtime-corejs3/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _es_index__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../es/index */ "../es/index.jsx");
+
 
 
 
@@ -6069,43 +6204,94 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/Users/lamho/Desktop/\u524D\u7AEF\u4EE3\u7801/Github/ncnbb-react-intl/example/src/single/js/Sub.jsx";
 
 
+var renderData = {
+  name: 'lamho',
+  age: '100'
+};
 
 var Sub = /*#__PURE__*/function (_React$Component) {
-  Object(_Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(Sub, _React$Component);
+  Object(_Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(Sub, _React$Component);
 
-  function Sub() {
-    Object(_Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Sub);
+  function Sub(props) {
+    var _this;
 
-    return Object(_Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Sub).apply(this, arguments));
+    Object(_Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, Sub);
+
+    _this = Object(_Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, Object(_Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(Sub).call(this, props));
+    _this.state = {
+      time: 0
+    };
+    return _this;
   }
 
-  Object(_Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Sub, [{
+  Object(_Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(Sub, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      _Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_core_js_stable_set_interval__WEBPACK_IMPORTED_MODULE_0___default()(function () {
+        _this2.setState({
+          time: ++_this2.state.time
+        });
+      }, 1000);
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 8
+          lineNumber: 27
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_es_index__WEBPACK_IMPORTED_MODULE_6__["FormatMessage"], {
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_es_index__WEBPACK_IMPORTED_MODULE_7__["FormatMessage"], {
         id: "submit",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 9
+          lineNumber: 28
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", {
+      }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 10
+          lineNumber: 29
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_es_index__WEBPACK_IMPORTED_MODULE_6__["FormatMessage"], {
+      }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_es_index__WEBPACK_IMPORTED_MODULE_7__["FormatMessage"], {
         id: "cancel",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 11
+          lineNumber: 30
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 31
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_es_index__WEBPACK_IMPORTED_MODULE_7__["FormatMessage"], {
+        id: "replaceStr",
+        renderData: renderData,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 32
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 33
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_es_index__WEBPACK_IMPORTED_MODULE_7__["FormatMessage"], {
+        id: "reciprocal",
+        renderData: {
+          time: this.state.time
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 34
         },
         __self: this
       }));
@@ -6113,7 +6299,7 @@ var Sub = /*#__PURE__*/function (_React$Component) {
   }]);
 
   return Sub;
-}(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_6___default.a.Component);
 
 
 

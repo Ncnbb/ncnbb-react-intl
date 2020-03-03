@@ -186,27 +186,91 @@ var CustomRCIntlProvider = /*#__PURE__*/function (_React$Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _createContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./createContext */ "../es/createContext.js");
+/* harmony import */ var _Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/@babel/runtime-corejs3/helpers/esm/classCallCheck */ "../node_modules/@babel/runtime-corejs3/helpers/esm/classCallCheck.js");
+/* harmony import */ var _Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/@babel/runtime-corejs3/helpers/esm/createClass */ "../node_modules/@babel/runtime-corejs3/helpers/esm/createClass.js");
+/* harmony import */ var _Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/@babel/runtime-corejs3/helpers/esm/possibleConstructorReturn */ "../node_modules/@babel/runtime-corejs3/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../node_modules/@babel/runtime-corejs3/helpers/esm/getPrototypeOf */ "../node_modules/@babel/runtime-corejs3/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../node_modules/@babel/runtime-corejs3/helpers/esm/inherits */ "../node_modules/@babel/runtime-corejs3/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _createContext__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./createContext */ "../es/createContext.js");
+
+
+
+
+
 var _jsxFileName = "/Users/lamho/Desktop/\u524D\u7AEF\u4EE3\u7801/Github/ncnbb-react-intl/es/FormatMessage.jsx";
 
 
 
-function FormatMessage(props) {
-  var langMap = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_createContext__WEBPACK_IMPORTED_MODULE_1__["default"]);
-  if (!langMap) throw new Error('没有任何多语言数据');
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: props.className,
-    style: props.style,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 7
-    },
-    __self: this
-  }, langMap[props.id]);
-}
+var FormatMessage = /*#__PURE__*/function (_React$Component) {
+  Object(_Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(FormatMessage, _React$Component);
 
+  function FormatMessage(props) {
+    Object(_Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, FormatMessage);
+
+    return Object(_Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(FormatMessage).call(this, props));
+  }
+
+  Object(_Users_lamho_Desktop_Github_ncnbb_react_intl_node_modules_babel_runtime_corejs3_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(FormatMessage, [{
+    key: "createRegExp",
+    value: function createRegExp(key) {
+      return new RegExp("{".concat(key, "}"), 'g');
+    }
+  }, {
+    key: "replaceStr",
+    value: function replaceStr(str, renderData) {
+      var newStr = str;
+
+      for (var item in renderData) {
+        newStr = newStr.replace(this.createRegExp(item), renderData[item]);
+      }
+
+      return newStr;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this = this;
+
+      var _this$props = this.props,
+          id = _this$props.id,
+          style = _this$props.style,
+          className = _this$props.className,
+          renderData = _this$props.renderData;
+
+      if (!id) {
+        return null;
+      }
+
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_createContext__WEBPACK_IMPORTED_MODULE_6__["default"].Consumer, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 22
+        },
+        __self: this
+      }, function (state) {
+        return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
+          className: className,
+          style: style,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 24
+          },
+          __self: this
+        }, renderData ? _this.replaceStr(state[id], renderData) : state[id]);
+      });
+    }
+  }]);
+
+  return FormatMessage;
+}(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
+
+FormatMessage.defaultProps = {
+  className: '',
+  style: {},
+  renderData: null
+};
 /* harmony default export */ __webpack_exports__["default"] = (FormatMessage);
 
 /***/ }),
@@ -348,7 +412,7 @@ var RCIntlContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext({
 /*!***********************!*\
   !*** ../es/index.jsx ***!
   \***********************/
-/*! exports provided: CustomRCIntlProvider, I18nRCIntlProvider, SingleRCIntlProvider, FormatMessage */
+/*! exports provided: CustomRCIntlProvider, I18nRCIntlProvider, SingleRCIntlProvider, FormatMessageHookComponent, FormatMessage */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -363,7 +427,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SingleRCIntlProvider", function() { return _SingleRCIntlProvider__WEBPACK_IMPORTED_MODULE_2__["default"]; });
 
 /* harmony import */ var _FormatMessage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./FormatMessage */ "../es/FormatMessage.jsx");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FormatMessageHookComponent", function() { return _FormatMessage__WEBPACK_IMPORTED_MODULE_3__["default"]; });
+
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FormatMessage", function() { return _FormatMessage__WEBPACK_IMPORTED_MODULE_3__["default"]; });
+
 
 
 

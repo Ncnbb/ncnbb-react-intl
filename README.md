@@ -118,10 +118,34 @@ window.i18n = {
 <Button><FormatMessage id='submit'/></Button>
 ```
 
-| 属性      | 说明              | 类型   | 默认值 |
-| --------- | ----------------- | ------ | ------ |
-| id        | 多语言的键值      | string | 无     |
-| className | 渲染后span的class | string | ''     |
-| style     | 内联style样式     | object | {}     |
+| 属性       | 说明              | 类型   | 默认值 |
+| ---------- | ----------------- | ------ | ------ |
+| id         | 多语言的键值      | string | 无     |
+| className  | 渲染后span的class | string | ''     |
+| style      | 内联style样式     | object | {}     |
+| renderData | 渲染数据替换数据  | object | null   |
+
+在一些情况下，可能渲染多语言变量的时候会存在一些特殊情况，例如：
+`'my name is {name}, my age is {age}, {name} is a good body'`,需要在渲染的时候从其他数据中提取进行渲染，所以`FormatMessage`组件支持传入一个参数`renderData`。
+
+```jsx
+window.i18n = {
+    replaceStr: 'my name is {name}, my age is {age}, {name} is a good body'
+};
+
+// 替换数据
+const renderData = {
+    name: 'lamho',
+    age: '100'
+}
+
+// 调用组件
+<FormatMessage id='replaceStr' renderData={renderData} />
+// 输出 my name is lamho, my age is 100, lamho is a good body
+```
+
+>占位标识需要使用{}进行包裹
+
+
 
 

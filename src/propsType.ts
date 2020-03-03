@@ -25,6 +25,11 @@ export interface FormatMessageProps {
     id: string
     className?: string
     style?: React.CSSProperties
+    renderData?: RenderDataProps
+}
+
+export interface RenderDataProps {
+    [propName: string]: string
 }
 
 declare global {  interface Window {
