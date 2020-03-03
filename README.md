@@ -128,6 +128,8 @@ window.i18n = {
 在一些情况下，可能渲染多语言变量的时候会存在一些特殊情况，例如：
 `'my name is {name}, my age is {age}, {name} is a good body'`,需要在渲染的时候从其他数据中提取进行渲染，所以`FormatMessage`组件支持传入一个参数`renderData`。
 
+>占位标识需要使用{}进行包裹
+
 ```jsx
 window.i18n = {
     replaceStr: 'my name is {name}, my age is {age}, {name} is a good body'
@@ -144,7 +146,26 @@ const renderData = {
 // 输出 my name is lamho, my age is 100, lamho is a good body
 ```
 
->占位标识需要使用{}进行包裹
+另外一种情况就是在renderData当中，需要替换的不是字符串，而是传入一个组件，那么renderData也是支持的。仅仅只是传入的参数不是一个字符串，而是一个JSX组件即可。
+
+```jsx
+window.i18n = {
+    replaceStr: 'my name is {name}, my age is {age}, {component}, {name} is a good body, <a href="https://www.baidu.com">去搜索</a>, {component2}'
+};
+
+const renderData = {
+    name: 'lamho',
+    age: '100',
+    component: (<button onClick={this.btnClick}>按钮</button>),
+    component2: <Btn/>
+}
+
+<FormatMessage id='replaceStr' renderData={this.renderData} />
+```
+
+
+
+
 
 
 
