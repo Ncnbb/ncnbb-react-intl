@@ -4,6 +4,17 @@
   "description": "",
   "main": "lib/index.js",
   "types": "es/index.d.ts",
+  "homepage": "https://github.com/Ncnbb/ncnbb-react-intl",
+  "keywords": [
+    "react",
+    "react-intl",
+    "internationalization"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Ncnbb/ncnbb-react-intl.git",
+    "directory": "/"
+  },
   "scripts": {
     "build": "rm -rf ./es && gulp build",
     "watch": "rm -rf ./es && gulp watch",
