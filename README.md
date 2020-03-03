@@ -46,6 +46,8 @@ ncnbb-react-intl提供多种多语言使用方式，其中包括：
 - SingleRCIntlProvider
 
 每一个组件对应满足不同情况下的多语言解决方案
+ 
+>Provider组件应该在根组件中进行调用。
 
 #### CustomRCIntlProvider
 `CustomRCIntlProvider`组件是为了满足需要自定义多语言数据的情景，例如前端项目中内置i18n的多语言文件，通过对`CustomRCIntlProvider`调用时`import`对应的多语言文件进行初始化
