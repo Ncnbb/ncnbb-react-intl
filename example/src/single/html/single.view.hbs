@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    {{#each assets.css}}
+    {{{this}}}
+    {{/each}}
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+        window.i18n = {
+            submit: '提交',
+            cancel: '取消'
+        };
+    </script>
+    {{#each assets.js}}
+    {{{this}}}
+    {{/each}}
+</body>
+
+</html>
