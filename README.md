@@ -3,8 +3,7 @@
 <p align='center'>
 <img alt='npm' src='https://img.shields.io/npm/v/ncnbb-react-intl'/>
 <img alt='NPM' src='https://img.shields.io/npm/l/ncnbb-react-intl'/>
-<img alt='zzc' src='https://img.shields.io/badge/company-%E7%A7%9F%E7%A7%9F%E8%BD%A6-blue'/>
-<img alt='team' src='https://img.shields.io/badge/team-IRC--FE-yellow'/>
+<img alt='team' src='https://img.shields.io/badge/team-Ncnbb-yellow'/>
 </p>
 
 ### 简介
